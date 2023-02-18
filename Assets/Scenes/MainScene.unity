@@ -2722,8 +2722,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pistolBulletPrefab: {fileID: 5324441865037252968, guid: 967d3bd1aab4a3c4588ef04f1bcb3b2d, type: 3}
-  shotgunBulletPrefab: {fileID: 5324441865037252968, guid: 967d3bd1aab4a3c4588ef04f1bcb3b2d, type: 3}
-  rocketBulletPrefab: {fileID: 5324441865037252968, guid: 967d3bd1aab4a3c4588ef04f1bcb3b2d, type: 3}
+  shotgunBulletPrefab: {fileID: 5324441865037252968, guid: 6c03c3ce12aa9244483393f3050b817f, type: 3}
+  rocketBulletPrefab: {fileID: 5324441865037252968, guid: efe2b604d5c9d844db1260ceefa76468, type: 3}
   particlePrefab: {fileID: 5324441865037252968, guid: 967d3bd1aab4a3c4588ef04f1bcb3b2d, type: 3}
   amountBullet: 20
   amountParticle: 5

@@ -31,8 +31,8 @@ namespace Controllers
         private void Init()
         {
             _data = manager.GetData();
-            _currentGun = (IGun)gunControllers[0];
-            gunMeshes[0].SetActive(true);
+            _currentGun = (IGun)gunControllers[2];
+            gunMeshes[2].SetActive(true);
         }
 
 

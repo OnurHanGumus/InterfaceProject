@@ -24,7 +24,7 @@ public class ShotgunController : MonoBehaviour, IGun
         for (int i = 0; i < 3; i++)
         {
             GameObject bullet = PoolSignals.Instance.onGetObject(PoolEnums.ShotgunBullet);
-            bullet.transform.position = transform.position + new Vector3(Random.Range(-2f, 3f), Random.Range(-2f, 3f), 0);
+            bullet.transform.position = transform.position + new Vector3(Random.Range(-0.5f, 0.6f), Random.Range(-0.5f, 0.6f), 0);
             bullet.transform.eulerAngles = transform.eulerAngles;
             bullet.SetActive(true);
         }
