@@ -12,6 +12,7 @@ namespace Controllers
         #region Serialized Variables
         [SerializeField] private PlayerManager manager;
         [SerializeField] private List<Component> gunControllers; //We use "Component" reference to see interfaces in Unity Inspector.
+        [SerializeField] private List<GameObject> gunMeshes;
         #endregion
         #region Private Variables
         private PlayerData _data;
@@ -30,7 +31,8 @@ namespace Controllers
         private void Init()
         {
             _data = manager.GetData();
-            _currentGun = (IGun)gunControllers[1];
+            _currentGun = (IGun)gunControllers[0];
+            gunMeshes[0].SetActive(true);
         }
 
 

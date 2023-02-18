@@ -21,7 +21,12 @@ public class PistolController : MonoBehaviour, IGun
 
     public void Shoot(Vector3 pos)
     {
-        PoolSignals.Instance.onGetObject(PoolEnums.PistolBullet);
+        GameObject bullet = PoolSignals.Instance.onGetObject(PoolEnums.PistolBullet);
+        bullet.transform.position = transform.position;
+        bullet.transform.eulerAngles = transform.eulerAngles;
+
+        bullet.SetActive(true);
+
         Debug.Log("Pistol Shoot has Triggered.");
     }
     public void Reload()

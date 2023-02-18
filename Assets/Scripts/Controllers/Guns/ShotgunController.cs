@@ -21,7 +21,12 @@ public class ShotgunController : MonoBehaviour, IGun
 
     public void Shoot(Vector3 pos)
     {
-        PoolSignals.Instance.onGetObject(PoolEnums.ShotgunBullet);
+        GameObject bullet = PoolSignals.Instance.onGetObject(PoolEnums.ShotgunBullet);
+        bullet.transform.position = transform.position;
+        bullet.transform.eulerAngles = transform.eulerAngles;
+
+        //bullet.transform.localEulerAngles = new Vector3(Random.Range(-2, 3), Random.Range(-2, 3), Random.Range(-2, 3));
+        bullet.SetActive(true);
         Debug.Log("Shotgun Shoot has Triggered.");
     }
     public void Reload()

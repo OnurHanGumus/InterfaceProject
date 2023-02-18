@@ -21,7 +21,12 @@ public class RocketController : MonoBehaviour, IGun
 
     public void Shoot(Vector3 pos)
     {
-        PoolSignals.Instance.onGetObject(PoolEnums.RocketBullet);
+        GameObject bullet = PoolSignals.Instance.onGetObject(PoolEnums.RocketBullet);
+        bullet.transform.position = transform.position;
+        bullet.transform.eulerAngles = transform.eulerAngles;
+
+        bullet.SetActive(true);
+
         Debug.Log("Rocket Shoot has Triggered.");
     }
     public void Reload()

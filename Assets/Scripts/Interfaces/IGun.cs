@@ -5,12 +5,6 @@ using UnityEngine;
 public interface IGun
 {
     public int AmmoCapacity { get; set; }
-    public void Shoot(Vector3 pos)
-    {
-
-    }
-    public void Reload()
-    {
-
-    }
+    public void Shoot(Vector3 pos);
+    public void Reload();
 }
