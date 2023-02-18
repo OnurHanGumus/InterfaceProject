@@ -28,14 +28,14 @@ namespace Controllers
         private void Init()
         {
             _rig = GetComponent<Rigidbody>();
-            _data = _manager.GetData();
             _manager = GetComponent<PlayerManager>();
+            _data = _manager.GetData();
         }
 
 
         private void FixedUpdate()
         {
-            Move();
+            //Move();
         }
 
 
@@ -50,9 +50,9 @@ namespace Controllers
             _rig.velocity = new Vector3(_rig.velocity.x, _rig.velocity.y, _data.Speed);
         }
 
-        public void OnClicked()
+        public void OnClicked(Vector3 pos)
         {
-
+            transform.LookAt(pos);
         }
 
         public void OnReleased()

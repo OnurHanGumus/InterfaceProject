@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using Data.UnityObject;
 using Data.ValueObject;
@@ -33,7 +33,10 @@ namespace Managers
         private Vector2? _mousePosition; //ref type
         private Vector3 _moveVector; //ref type
         private bool _isPlayerDead = false;
+        private Ray _ray;
+        private Transform _lastHitTransform;
 
+        private bool _isBoomerangDisapeared = false;
         #endregion
 
         #endregion
@@ -60,8 +63,8 @@ namespace Managers
             InputSignals.Instance.onDisableInput += OnDisableInput;
             CoreGameSignals.Instance.onPlay += OnPlay;
             CoreGameSignals.Instance.onReset += OnReset;
-            //PlayerSignals.Instance.onPlayerDie += OnChangePlayerLivingState;  //Ölüþ animasyonu sýrasýnda playeri hareket ettiremememiz için varlar.
-            //PlayerSignals.Instance.onPlayerSpawned += OnChangePlayerLivingState;
+
+
         }
 
         private void UnsubscribeEvents()
@@ -70,8 +73,8 @@ namespace Managers
             InputSignals.Instance.onDisableInput -= OnDisableInput;
             CoreGameSignals.Instance.onPlay -= OnPlay;
             CoreGameSignals.Instance.onReset -= OnReset;
-            //PlayerSignals.Instance.onPlayerDie -= OnChangePlayerLivingState;
-            //PlayerSignals.Instance.onPlayerSpawned -= OnChangePlayerLivingState;
+
+
         }
 
         private void OnDisable()
@@ -89,41 +92,62 @@ namespace Managers
                 {
                     return;
                 }
-                //InputSignals.Instance.onInputDragged?.Invoke(new InputParams() //Joystick eklenince aç
-                //{
-                //    XValue = joystick.Horizontal,
-                //    ZValue = joystick.Vertical
-                //    //ClampValues = new Vector2(Data.ClampSides.x, Data.ClampSides.y)
-                //});
-            }
+                _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+                RaycastHit hit;
+                if (Physics.Raycast(_ray, out hit))
+                {
+                    if (hit.collider.CompareTag("Enemy"))
+                    {
+                        if (hit.transform.Equals(_lastHitTransform))
+                        {
+                            return;
+                        }
+                        Vector3 hitPoint = hit.point;
+                        hitPoint = new Vector3(hitPoint.x, 0, hitPoint.z);
+                        InputSignals.Instance.onClicked?.Invoke(hitPoint);
+                        _lastHitTransform = hit.transform;
+                    }
+                }
+            }
             if (Input.GetMouseButtonUp(0))
             {
-                InputSignals.Instance.onInputDragged?.Invoke(new InputParams()
-                {
-                    XValue = 0,
-                    ZValue = 0
-                });
+                InputSignals.Instance.onInputReleased?.Invoke();
             }
 
         }
 
         private void OnEnableInput()
         {
-            
+
         }
 
         private void OnDisableInput()
         {
-            
+
         }
 
         private void OnPlay()
         {
-            
+
         }
 
-        //private bool IsPointerOverUIElement() //Joystick'i doðru konumlandýrýrsan buna gerek kalmaz
+        private void OnBoomerangDisapeared()
+        {
+            _isBoomerangDisapeared = true;
+        }
+
+        private void OnBoomerangRebuilded()
+        {
+            _isBoomerangDisapeared = false;
+        }
+
+        private void OnBoomerangReturned()
+        {
+            _lastHitTransform = null;
+        }
+
+        //private bool IsPointerOverUIElement() //Joystick'i doï¿½ru konumlandï¿½rï¿½rsan buna gerek kalmaz
         //{
         //    var eventData = new PointerEventData(EventSystem.current);
         //    eventData.position = Input.mousePosition;
