@@ -34,7 +34,6 @@ namespace Managers
         private Vector3 _moveVector; //ref type
         private bool _isPlayerDead = false;
         private Ray _ray;
-        private Transform _lastHitTransform;
 
         private bool _isBoomerangDisapeared = false;
         #endregion
@@ -86,7 +85,7 @@ namespace Managers
 
         private void Update()
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (_isPlayerDead)
                 {
@@ -99,14 +98,9 @@ namespace Managers
                 {
                     if (hit.collider.CompareTag("Enemy"))
                     {
-                        if (hit.transform.Equals(_lastHitTransform))
-                        {
-                            return;
-                        }
                         Vector3 hitPoint = hit.point;
-                        hitPoint = new Vector3(hitPoint.x, 0, hitPoint.z);
+                        hitPoint = new Vector3(hitPoint.x, hit.transform.position.y, hitPoint.z);
                         InputSignals.Instance.onClicked?.Invoke(hitPoint);
-                        _lastHitTransform = hit.transform;
                     }
                 }
             }
@@ -144,7 +138,7 @@ namespace Managers
 
         private void OnBoomerangReturned()
         {
-            _lastHitTransform = null;
+
         }
 
         //private bool IsPointerOverUIElement() //Joystick'i do�ru konumland�r�rsan buna gerek kalmaz

@@ -21,12 +21,16 @@ public class ShotgunController : MonoBehaviour, IGun
 
     public void Shoot(Vector3 pos)
     {
-        GameObject bullet = PoolSignals.Instance.onGetObject(PoolEnums.ShotgunBullet);
-        bullet.transform.position = transform.position;
-        bullet.transform.eulerAngles = transform.eulerAngles;
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject bullet = PoolSignals.Instance.onGetObject(PoolEnums.ShotgunBullet);
+            bullet.transform.position = transform.position + new Vector3(Random.Range(-2f, 3f), Random.Range(-2f, 3f), 0);
+            bullet.transform.eulerAngles = transform.eulerAngles;
+            bullet.SetActive(true);
+        }
+
 
         //bullet.transform.localEulerAngles = new Vector3(Random.Range(-2, 3), Random.Range(-2, 3), Random.Range(-2, 3));
-        bullet.SetActive(true);
         Debug.Log("Shotgun Shoot has Triggered.");
     }
     public void Reload()

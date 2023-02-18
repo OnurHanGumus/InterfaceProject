@@ -52,6 +52,7 @@ namespace Controllers
 
         public void OnClicked(Vector3 pos)
         {
+            pos.y = 0;
             transform.LookAt(pos);
         }
 

@@ -39,6 +39,7 @@ namespace Controllers
 
         public void OnClicked(Vector3 pos)
         {
+            transform.LookAt(pos);
             _currentGun.Shoot(pos);
         }
 
