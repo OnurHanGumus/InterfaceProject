@@ -17,6 +17,7 @@ namespace Managers
         [SerializeField] private GameOverPanelController gameOverPanelController;
         [SerializeField] private LevelPanelController levelPanelController;
         [SerializeField] private HighScorePanelController highScorePanelController;
+        [SerializeField] private StoreController storeController;
 
         #endregion
         #region Private Variables

@@ -18,6 +18,7 @@ namespace Controllers
         private PlayerData _data;
         private IGun _currentGun;
 
+        private int _selectedGunId = 0;
         private bool _isNotStarted = true;
 
         #endregion
@@ -31,11 +32,18 @@ namespace Controllers
         private void Init()
         {
             _data = manager.GetData();
-            _currentGun = (IGun)gunControllers[2];
-            gunMeshes[2].SetActive(true);
+            ChangeGun();
         }
 
-
+        private void ChangeGun()
+        {
+            _currentGun = (IGun)gunControllers[_selectedGunId];
+            for (int i = 0; i < gunControllers.Count; i++)
+            {
+                gunMeshes[i].SetActive(false);
+            }
+            gunMeshes[_selectedGunId].SetActive(true);
+        }
 
         public void OnClicked(Vector3 pos)
         {
@@ -53,6 +61,11 @@ namespace Controllers
 
 
 
+        }
+        public void OnSelectGun(int gunId)
+        {
+            _selectedGunId = gunId;
+            ChangeGun();
         }
         public void OnLevelFailed()
         {

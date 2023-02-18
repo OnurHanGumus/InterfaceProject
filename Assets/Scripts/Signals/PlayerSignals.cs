@@ -9,5 +9,6 @@ namespace Signals
     public class PlayerSignals : MonoSingleton<PlayerSignals>
     {
         public Func<Transform> onGetPlayer = delegate { return null; };
+        public UnityAction<int> onSelectGun = delegate { };
     }
 }

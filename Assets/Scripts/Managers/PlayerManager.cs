@@ -59,6 +59,7 @@ namespace Managers
             CoreGameSignals.Instance.onRestartLevel += OnResetLevel;
             InputSignals.Instance.onClicked += _movementController.OnClicked;
             InputSignals.Instance.onClicked += shootController.OnClicked;
+            PlayerSignals.Instance.onSelectGun += shootController.OnSelectGun;
 
         }
 
@@ -72,6 +73,7 @@ namespace Managers
             CoreGameSignals.Instance.onRestartLevel -= OnResetLevel;
             InputSignals.Instance.onClicked -= _movementController.OnClicked;
             InputSignals.Instance.onClicked -= shootController.OnClicked;
+            PlayerSignals.Instance.onSelectGun -= shootController.OnSelectGun;
         }
 
 

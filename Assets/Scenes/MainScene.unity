@@ -642,6 +642,7 @@ MonoBehaviour:
   gameOverPanelController: {fileID: 1994952899310297995}
   levelPanelController: {fileID: 1589092165}
   highScorePanelController: {fileID: 6962386289050533000}
+  storeController: {fileID: 0}
 --- !u!1 &104751525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1643,38 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1435954897, guid: 40bd2da8fb67bdf42b9fcd78a535aa10, type: 3}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1145311332}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StoreController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2328891901403118493, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
       propertyPath: m_Name
       value: Button (1)
@@ -3689,6 +3722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1145311330}
   - component: {fileID: 1145311331}
+  - component: {fileID: 1145311332}
   m_Layer: 0
   m_Name: Store
   m_TagString: Untagged
@@ -3743,6 +3777,18 @@ MonoBehaviour:
   m_Spacing: {x: 250, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1145311332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145311329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212872ec46e1078489924a07194cc8c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1197272557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,6 +3957,38 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1489189136, guid: 846181b52910a214e8e40d67020e7ebb, type: 3}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1145311332}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StoreController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2328891901403118493, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
       propertyPath: m_Name
       value: Button (2)
@@ -7968,6 +8046,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2036660573, guid: 3fd7fe1205d51c6488062bcae3652612, type: 3}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1145311332}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StoreController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2328891901403118489, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2328891901403118493, guid: a947f46011594c041a3a3a8670ca767a, type: 3}
       propertyPath: m_Name
       value: Button
