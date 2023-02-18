@@ -6,6 +6,9 @@ namespace Enums
     public enum PoolEnums
     {
         Collectable,
+        PistolBullet,
+        ShotgunBullet,
+        RocketBullet,
         Particle,
     }
 }

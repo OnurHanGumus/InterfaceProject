@@ -19,7 +19,7 @@ namespace Managers
         #endregion
 
         #region Serialized Variables
-
+        [SerializeField] private PlayerShootController shootController;
         #endregion
 
         #region Private Variables
@@ -58,6 +58,8 @@ namespace Managers
             CoreGameSignals.Instance.onRestartLevel += _movementController.OnRestartLevel;
             CoreGameSignals.Instance.onRestartLevel += OnResetLevel;
             InputSignals.Instance.onClicked += _movementController.OnClicked;
+            InputSignals.Instance.onClicked += shootController.OnClicked;
+
         }
 
         private void UnsubscribeEvents()
@@ -69,6 +71,7 @@ namespace Managers
             CoreGameSignals.Instance.onRestartLevel -= _movementController.OnRestartLevel;
             CoreGameSignals.Instance.onRestartLevel -= OnResetLevel;
             InputSignals.Instance.onClicked -= _movementController.OnClicked;
+            InputSignals.Instance.onClicked -= shootController.OnClicked;
         }
 
 
