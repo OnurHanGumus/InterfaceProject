@@ -2754,9 +2754,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5abcbf0e1b2cb7949b18fbd42a949757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pistolBulletPrefab: {fileID: 5324441865037252968, guid: 967d3bd1aab4a3c4588ef04f1bcb3b2d, type: 3}
-  shotgunBulletPrefab: {fileID: 5324441865037252968, guid: 6c03c3ce12aa9244483393f3050b817f, type: 3}
-  rocketBulletPrefab: {fileID: 5324441865037252968, guid: efe2b604d5c9d844db1260ceefa76468, type: 3}
+  pistolBulletPrefab: {fileID: 8788210379917122382, guid: 70556d52c4c2dd647a8a5e720cb0de9a, type: 3}
+  shotgunBulletPrefab: {fileID: 9131421033079951006, guid: 045d6f6f642b6b845ae25660dd1cbbaf, type: 3}
+  rocketBulletPrefab: {fileID: 5656795337279596268, guid: b79fe95385747a344a424afb8f3b5d36, type: 3}
   particlePrefab: {fileID: 5324441865037252968, guid: 967d3bd1aab4a3c4588ef04f1bcb3b2d, type: 3}
   amountBullet: 20
   amountParticle: 5
@@ -9803,6 +9803,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6950651867851718235, guid: e3fb3e1386ef7144db82b620ca398367, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291257368135140901, guid: e3fb3e1386ef7144db82b620ca398367, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

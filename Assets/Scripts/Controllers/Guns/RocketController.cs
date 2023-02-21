@@ -8,9 +8,11 @@ public class RocketController : MonoBehaviour, IGun
 {
     #region Self Variables
     #region Public Variables
-    public int CurrentAmmoCount;
 
-    public int AmmoCapacity { get; set; }
+    public int AmmoCapacity { get; set; } = 1;
+    public int CurrentBulletCount { get; set; } = 1;
+
+
     #endregion
     #region Serialized Variables
     #endregion
@@ -26,12 +28,14 @@ public class RocketController : MonoBehaviour, IGun
         bullet.transform.eulerAngles = transform.eulerAngles;
 
         bullet.SetActive(true);
+        --CurrentBulletCount;
 
         Debug.Log("Rocket Shoot has Triggered.");
     }
     public void Reload()
     {
-        
+        CurrentBulletCount = AmmoCapacity;
+        Debug.Log("Reloaded");
     }
 
 }

@@ -8,9 +8,10 @@ public class ShotgunController : MonoBehaviour, IGun
 {
     #region Self Variables
     #region Public Variables
-    public int CurrentAmmoCount;
 
-    public int AmmoCapacity { get; set; }
+    public int AmmoCapacity { get; set; } = 7;
+    public int CurrentBulletCount { get; set; } = 7;
+
     #endregion
     #region Serialized Variables
     #endregion
@@ -28,6 +29,7 @@ public class ShotgunController : MonoBehaviour, IGun
             bullet.transform.eulerAngles = transform.eulerAngles;
             bullet.SetActive(true);
         }
+        --CurrentBulletCount;
 
 
         //bullet.transform.localEulerAngles = new Vector3(Random.Range(-2, 3), Random.Range(-2, 3), Random.Range(-2, 3));
@@ -35,7 +37,8 @@ public class ShotgunController : MonoBehaviour, IGun
     }
     public void Reload()
     {
-        
+        CurrentBulletCount = AmmoCapacity;
+        Debug.Log("Reloaded");
     }
 
 }

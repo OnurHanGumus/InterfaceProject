@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IGun
 {
     public int AmmoCapacity { get; set; }
+    public int CurrentBulletCount { get; set; }
     public void Shoot(Vector3 pos);
     public void Reload();
 }

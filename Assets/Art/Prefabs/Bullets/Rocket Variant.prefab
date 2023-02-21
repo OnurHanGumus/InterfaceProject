@@ -1,15 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4745106620776654538
+--- !u!1001 &8552061847665220456
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2052965863803857553, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052965863803857553, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052965863803857553, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000379281596578394, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 4048735600795417988, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
       propertyPath: m_Name
-      value: BaseBullet
+      value: Rocket Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4048735600795417989, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
       propertyPath: m_RootOrder
@@ -54,6 +70,22 @@ PrefabInstance:
     - target: {fileID: 4048735600795417989, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050830408253583957, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: m_Height
+      value: 0.3090794
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050830408253583957, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: m_Radius
+      value: 0.045923
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050830408253583957, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: m_Center.y
+      value: -0.0003629215
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050830408253583957, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}
+      propertyPath: m_Center.z
+      value: 0.1544596
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6193f5fdc09374dbf8c246a2360dab, type: 3}

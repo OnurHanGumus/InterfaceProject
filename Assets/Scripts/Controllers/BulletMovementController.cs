@@ -6,6 +6,7 @@ using UnityEngine;
 using Data.UnityObject;
 using Data.ValueObject;
 using System;
+using System.Collections;
 
 namespace Controllers
 {
@@ -37,11 +38,17 @@ namespace Controllers
         private void OnEnable()
         {
             _rig.AddRelativeForce(Vector3.forward * 5, ForceMode.Impulse);
+            StartCoroutine(Disable());
         }
         private void OnDisable()
         {
             _rig.velocity = Vector3.zero;
         }
 
+        private IEnumerator Disable()
+        {
+            yield return new WaitForSeconds(1f);
+            gameObject.SetActive(false);
+        }
     }
 }

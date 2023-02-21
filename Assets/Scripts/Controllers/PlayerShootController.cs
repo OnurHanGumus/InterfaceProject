@@ -48,7 +48,14 @@ namespace Controllers
         public void OnClicked(Vector3 pos)
         {
             transform.LookAt(pos);
-            _currentGun.Shoot(pos);
+            if (_currentGun.CurrentBulletCount <= 0)
+            {
+                _currentGun.Reload();
+            }
+            else
+            {
+                _currentGun.Shoot(pos);
+            }
         }
 
         public void OnReleased()
