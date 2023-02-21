@@ -11,7 +11,7 @@ namespace Controllers
 
         #region Serialized Variables
         [SerializeField] private PlayerManager manager;
-        [SerializeField] private List<Component> gunControllers; //We use "Component" reference to see interfaces in Unity Inspector.
+        [SerializeField] private List<Component> gunControllers; //We use "Component" reference to see interfaces in Unity Inspector. Or we can also use their common base class "GunController". 
         [SerializeField] private List<GameObject> gunMeshes;
         #endregion
         #region Private Variables

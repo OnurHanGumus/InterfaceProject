@@ -4,13 +4,13 @@ using UnityEngine;
 using Signals;
 using Enums;
 
-public class ShotgunController : MonoBehaviour, IGun
+public class ShotgunController : GunController
 {
     #region Self Variables
     #region Public Variables
 
-    public int AmmoCapacity { get; set; } = 7;
-    public int CurrentBulletCount { get; set; } = 7;
+    public override int AmmoCapacity { get; set; } = 7;
+    public override int CurrentBulletCount { get; set; } = 7;
 
     #endregion
     #region Serialized Variables
@@ -20,7 +20,7 @@ public class ShotgunController : MonoBehaviour, IGun
     #endregion
     #endregion
 
-    public void Shoot(Vector3 pos)
+    public override void Shoot(Vector3 pos)
     {
         for (int i = 0; i < 3; i++)
         {
@@ -35,10 +35,9 @@ public class ShotgunController : MonoBehaviour, IGun
         //bullet.transform.localEulerAngles = new Vector3(Random.Range(-2, 3), Random.Range(-2, 3), Random.Range(-2, 3));
         Debug.Log("Shotgun Shoot has Triggered.");
     }
-    public void Reload()
+    public new void Reload()
     {
-        CurrentBulletCount = AmmoCapacity;
-        Debug.Log("Reloaded");
+        base.Reload();
     }
 
 }

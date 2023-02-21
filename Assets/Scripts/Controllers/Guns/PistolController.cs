@@ -4,13 +4,13 @@ using UnityEngine;
 using Signals;
 using Enums;
 
-public class PistolController : MonoBehaviour, IGun
+public class PistolController : GunController
 {
     #region Self Variables
     #region Public Variables
 
-    public int AmmoCapacity { get; set; } = 15;
-    public int CurrentBulletCount { get; set; } = 15;
+    public override int AmmoCapacity { get; set; } = 15;
+    public override int CurrentBulletCount { get; set; } = 15;
     #endregion
     #region Serialized Variables
     #endregion
@@ -19,7 +19,7 @@ public class PistolController : MonoBehaviour, IGun
     #endregion
     #endregion
 
-    public void Shoot(Vector3 pos)
+    public override void Shoot(Vector3 pos)
     {
         GameObject bullet = PoolSignals.Instance.onGetObject(PoolEnums.PistolBullet);
         bullet.transform.position = transform.position;
@@ -29,10 +29,9 @@ public class PistolController : MonoBehaviour, IGun
         --CurrentBulletCount;
         Debug.Log("Pistol Shoot has Triggered.");
     }
-    public void Reload()
+    public new void Reload()
     {
-        CurrentBulletCount = AmmoCapacity;
-        Debug.Log("Reloaded");
+        base.Reload();
     }
 
 }
